@@ -1,4 +1,5 @@
 # 動画出力がまだできてない
+# yolov5のフォルダ直下に置く
 
 import cv2
 import torch
@@ -42,6 +43,7 @@ while cap.isOpened():
     if len(filtered_pred) > 0:
         # 最初に検出された物体の座標を取得
         x1, y1, x2, y2 = map(int, filtered_pred[0, :4])
+	# 切り出すフレームの大きさを指定(400px*400px)
         x1 -= 200
         y1 -= 200
         x2 += 200
